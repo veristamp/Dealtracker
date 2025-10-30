@@ -1,0 +1,14 @@
+.python-version
+__pycache__
+.env
+uv.lock
+.venv
+venv
+Frontend\node_modules
+public.pem
+private.pem
+files
+package-lock.json
+Frontend\package-lock.json
+.env
+server\.env

@@ -1,0 +1,27 @@
+# Web Framework & Server
+fastapi
+uvicorn[standard]
+
+# Database & ORM
+sqlalchemy
+
+
+# HTTP & API Client
+requests
+aiofiles
+python-multipart
+
+# Scheduling
+apscheduler
+
+# Web Scraping
+crawl4ai
+
+# Security & Authentication
+cryptography
+passlib[bcrypt]
+PyJWT[crypto]
+itsdangerous
+
+slowapi
+structlog

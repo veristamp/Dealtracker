@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    container_name: dealtracker-backend
+    restart: unless-stopped
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - PRIVATE_KEY_PATH=${PRIVATE_KEY_PATH}
+      - PUBLIC_KEY_PATH=${PUBLIC_KEY_PATH}
+      - ALGORITHM=${ALGORITHM:-EdDSA}
+      - ACCESS_TOKEN_EXPIRE_MINUTES=${ACCESS_TOKEN_EXPIRE_MINUTES:-1440}
+      - REFRESH_TOKEN_EXPIRE_DAYS=${REFRESH_TOKEN_EXPIRE_DAYS:-7}
+      - ADMIN_USERNAME=${ADMIN_USERNAME:-admin}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
+      - ALLOWED_ADMIN_IPS=${ALLOWED_ADMIN_IPS:-127.0.0.1,::1}
+      - SESSION_SECRET_KEY=${SESSION_SECRET_KEY}
+      - ENVIRONMENT=${ENVIRONMENT:-production}
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+    volumes:
+      - ../files/private.pem:/app/keys/private.pem:ro 
+      - ../files/public.pem:/app/keys/public.pem:ro 
+    ports:
+      - "8592:8592"
+    networks:
+      - Deal-tracker-network
+    dns:
+      - 100.100.100.100 # Tailscale DNS if you are using tailscale.
+      - 1.1.1.1 # Cloudflare DNS
+      - 8.8.8.8 # Google DNS
+    depends_on:
+      - postgres
+  postgres:
+      image: postgres:16-alpine
+      container_name: postgres-db
+      restart: unless-stopped
+      environment:
+        POSTGRES_DB: dealtracker
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: postgres
+      ports:
+        - "5432:5432"
+      volumes:
+        - postgres_data:/var/lib/postgresql/data
+      healthcheck:
+        test: ["CMD-SHELL", "pg_isready -U postgres -d dealtracker"]
+        interval: 10s
+        timeout: 5s
+        retries: 5
+      networks:
+        - Deal-tracker-network
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  Deal-tracker-network:
+    driver: bridge
