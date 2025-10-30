@@ -6,7 +6,7 @@
 >
 > The small scraper included here (about 100 lines) was only a demo component.  
 > The real goal was to understand **how a real SaaS system is structured** — with authentication, background jobs,  
-> Dockerized infrastructure, and a production-ready frontend.  
+> Dockerized infrastructure, and a frontend.  
 >
 > So if you’re here expecting a simple scraper — it’s much more than that 😄.  
 > This is the full-stack learning playground that got me started on my dev journey.
