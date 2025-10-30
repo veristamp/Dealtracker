@@ -50,20 +50,6 @@ DealTracker consists of **three major components** working together:
 
 ---
 
-## 🖥️ Quick Start (No Coding Required)
-
-For non-technical users, the setup is automated.(for windows Users Only)
-
-1. **Unzip** the DealTracker.rar folder anywhere on your PC.
-2. **Double-click** `setup.bat` — it installs everything automatically.
-3. **Launch** `DealTracker.exe` — your local app starts and opens in the browser.
-
-You can now register, log in, and begin tracking products instantly.
-No command-line or technical setup required!
-
-> 🪄 *Setup installs dependencies, starts the local FastAPI server,use the prebuilt React app, and launches it automatically. but this still need to host the auth-backend somewhere in vps or locally. Read-Below how to setup the Auth-Backend*
----
-
 ## 🧠 Developer Setup (Full Stack)
 
 ### Prerequisites
