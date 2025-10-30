@@ -1,18 +1,3 @@
-> ⚠️ **Note from the Developer**
->
-> This project was never meant to be “just a scraper.”  
-> **DealTracker** started as my experiment to build a **complete SaaS-style environment** —  
-> from secure backend auth to frontend UI and local orchestration — while I was learning full-stack development.  
->
-> The small scraper included here (about 100 lines) was only a demo component.  
-> The real goal was to understand **how a real SaaS system is structured** — with authentication, background jobs,  
-> Dockerized infrastructure, and a frontend.  
->
-> So if you’re here expecting a simple scraper — it’s much more than that 😄.  
-> This is the full-stack learning playground that got me started on my dev journey.
-
----
-
 # 🏷️ DealTracker
 
 **DealTracker** is your personal desktop assistant for catching the best online deals!
@@ -262,4 +247,17 @@ Just remember to credit the original author.
 > **Track smarter. Shop better. Save more — with DealTracker.**
 
 ---
+
+> ⚠️ **Note from the Developer**
+>
+> This project was never meant to be “just a scraper.”  
+> **DealTracker** started as my experiment to build a **complete SaaS-style environment** —  
+> from secure backend auth to frontend UI and local orchestration — while I was learning full-stack development.  
+>
+> The small scraper included here (about 100 lines) was only a demo component.  
+> The real goal was to understand **how a real SaaS system is structured** — with authentication, background jobs,  
+> Dockerized infrastructure, and a frontend.  
+>
+> So if you’re here expecting a simple scraper — it’s much more than that 😄.  
+> This is the full-stack learning playground that got me started on my dev journey.
 
